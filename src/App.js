@@ -12,7 +12,7 @@ function App() {
   const [birthDate, setBirthDate] = useState({ days: "", months: "", years: "" });
   const [age, setAge] = useState({ days: 0, months: 0, years: 0 });
   const [errors, setErrors] = useState({ days: '', months: '', years: '' });
-
+  
   
   
 
@@ -61,10 +61,12 @@ const calculateAge = () => {
 
   setAge({ days: daysDiff, months: monthsDiff, years: yearsDiff });
   // Validacion si esta vacio
+
+  
   if (!days) {
     console.log('Por favor, complete todos los campos');
     errors.days = 'This field is require';
-    return;
+    
   } else {
     errors.days = ""
   }
@@ -72,7 +74,7 @@ const calculateAge = () => {
   if (!months) {
     console.log('Por favor, complete todos los campos');
     errors.months = 'This field is require';
-    return;
+    
   } else {
     errors.months = ""
   }
@@ -80,7 +82,7 @@ const calculateAge = () => {
   if (!years) {
     console.log('Por favor, complete todos los campos');
     errors.years = 'This field is require';
-    return;
+    
   } else {
     errors.years = ""
   }
@@ -90,22 +92,23 @@ const calculateAge = () => {
     if (birthDate.days > 31) {
       console.log('El día no es válido');
       errors.days = 'Must be a valid day';
-      return
+      return;
     }
     
     if (birthDate.months > 12) {
       console.log('El mes no es válido');
       errors.months = 'Must be a valid month';
-      return
+      return;
     }
 
     if (birthDate.years < 1000) {
       console.log('El año no es válido');
       errors.years = 'Must be a valid year';
-      return
+      return;
     } else if(birthDate.years > new Date().getFullYear()) {
       console.log('El año no es válido');
       errors.years = 'Must be past';
+      return
     }
 
     
@@ -143,6 +146,7 @@ const calculateAge = () => {
   
 
   if (Object.keys(errors).length > 0) {
+    
     return;
   } else {
     setErrors({days: "", months: "", years: ""})
