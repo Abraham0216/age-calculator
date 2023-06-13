@@ -29,7 +29,7 @@ const Form = () => {
             <label htmlFor='YY' className={`text-sm lg:text-base ml-2 mb-1 tracking-widest text-gray-500 font-bold ${(errors.date || errors.years || errors.months || errors.days) && 'text-red-600'}`}>YEAR</label>
                 <input type='number'  name='years'  value={birthDate.years} min={1} max={3000} onChange={handleInputChange} onInput={(e) => { if (e.target.value.length > 4) e.target.value = e.target.value.slice(0, 4) }}  className={`w-11/12 lg:w-full   h-14 lg:h-20  mx-2   p-3 font-bold text-xl border hover:border-violet-600 ${(errors.date || errors.years || errors.months || errors.days) && 'border-red-600'} lg:text-3xl rounded-lg outline-none  border-gray-300`} placeholder="YYYY" id="YY"/>
                 {errors.years && <p className=" font-light italic ml-2 mt-1 text-red-600">{errors.years}</p>}
-                {errors.date && <p className=" font-light italic ml-2 mt-1 text-red-600">{`${errors.date} date`}</p>}
+                {errors.date && <p className=" font-light italic ml-2 mt-1 text-red-600">{`${birthDate.years > new Date().getFullYear() && 'Must be past'}`}</p>}
 
             </div>
         

@@ -9,7 +9,7 @@ function App() {
   
 
   
-  const [birthDate, setBirthDate] = useState({ days: 0, months: 0, years: 0 });
+  const [birthDate, setBirthDate] = useState({ days: "", months: "", years: "" });
   const [age, setAge] = useState({ days: 0, months: 0, years: 0 });
   const [errors, setErrors] = useState({ days: '', months: '', years: '' });
 
@@ -25,7 +25,7 @@ function App() {
   
     setBirthDate((prevState) => ({
       ...prevState,
-      [name]: parseInt(value, 10),
+      [name]: parseInt(value, 10)
       
     }));
     console.log(typeof(value));
@@ -42,19 +42,22 @@ const calculateAge = () => {
   const birthDateString = moment({ day: days, month: months - 1, year: years }).format('DD-MM-YYYY');
   console.log(birthDateString);
 
+  
+  // Cálculo de la fecha de nacimiento y la fecha actual
+
+  
+  const birthDateMoment = moment({ day: days, month: months - 1, year: years });
   const currentDate = moment();
-  const ageDuration = moment.duration(currentDate.diff(birthDateString));
+
+  // Obtener la diferencia de edad en años, meses y días
+
+  const ageDuration = moment.duration(currentDate.diff(birthDateMoment));
 
   const yearsDiff = ageDuration.years();
   const monthsDiff = ageDuration.months();
   const daysDiff = ageDuration.days();
 
   setAge({ days: daysDiff, months: monthsDiff, years: yearsDiff });
-
-  console.log(age.days);
-  console.log(age.months);
-  console.log(age.years);
-
   // Validacion si esta vacio
   if (!days) {
     console.log('Por favor, complete todos los campos');
