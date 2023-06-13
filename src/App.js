@@ -49,6 +49,8 @@ const calculateAge = () => {
   const birthDateMoment = moment({ day: days, month: months - 1, year: years });
   const currentDate = moment();
 
+  
+
   // Obtener la diferencia de edad en años, meses y días
 
   const ageDuration = moment.duration(currentDate.diff(birthDateMoment));
@@ -83,16 +85,48 @@ const calculateAge = () => {
     errors.years = ""
   }
 
-  
+  if ( years && months && days) {
 
-  // Validación de fecha de nacimiento
-  if (!moment(birthDateString, 'DD-MM-YYYY', true).isValid()) {
-    console.log('Fecha de nacimiento inválida');
-    errors.date = 'Must be a valid';
-    return;
-  } else {
-    errors.date = ""
+    if (birthDate.days > 31) {
+      console.log('El día no es válido');
+      errors.days = 'Must be a valid day';
+      return
+    }
+    
+    if (birthDate.months > 12) {
+      console.log('El mes no es válido');
+      errors.months = 'Must be a valid month';
+      return
+    }
+
+    if (birthDate.years < 1000) {
+      console.log('El año no es válido');
+      errors.years = 'Must be a valid year';
+      return
+    } else if(birthDate.years > new Date().getFullYear()) {
+      console.log('El año no es válido');
+      errors.years = 'Must be past';
+    }
+
+    
+    if (!moment(birthDateString, 'DD-MM-YYYY', true).isValid()) {
+
+      
+      
+      /* if (!birthDateString.year()) {
+        console.log('El año no es válido');
+      } */
+
+
+      /* console.log('Fecha de nacimiento inválida');
+      errors.dateDays = 'Must be a valid';
+      errors.dateMonths = 'Must be a valid'; */
+      return;
+    } else {
+      errors.date = ""
+    }
   }
+  
 
   // Validación de fecha de nacimiento antes de la fecha actual
   if (currentDate.isBefore(birthDateString)) {
@@ -102,6 +136,11 @@ const calculateAge = () => {
   } else {
     errors.date = ""
   }
+
+  
+
+  // Validación de fecha de nacimiento
+  
 
   if (Object.keys(errors).length > 0) {
     return;
