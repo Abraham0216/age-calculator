@@ -1,70 +1,85 @@
-# Getting Started with Create React App
+# Frontend Mentor - Age calculator app solution
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a solution to the [Age calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/age-calculator-app-dF9DFFpj-Q). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-## Available Scripts
+## Table of contents
 
-In the project directory, you can run:
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  
+- [Author](#author)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Overview
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### The challenge
 
-### `npm run build`
+Users should be able to:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- View an age in years, months, and days after submitting a valid date through the form
+- Receive validation errors if:
+  - Any field is empty when the form is submitted
+  - The day number is not between 1-31
+  - The month number is not between 1-12
+  - The year is in the future
+  - The date is invalid e.g. 31/04/1991 (there are 30 days in April)
+- View the optimal layout for the interface depending on their device's screen size
+- See hover and focus states for all interactive elements on the page
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Screenshot
 
-### `npm run eject`
+![Final Result](./src/assets/images/localhost_3000_%20(1).png)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Links
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Solution URL: [solution URL here](https://github.com/Abraham0216/age-calculator)
+- Live Site URL: [live site URL here](https://age-calculator-c82ee.web.app/)
 
-## Learn More
+## My process
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Built with
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+- [React](https://reactjs.org/) - JS library
+- TailwindCSS
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+### What I learned
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Well, this project required a lot of thinking and libraries to manage dates, such as MomentJS. So in this challenge, I expand my knowledge of how to work efficiently with dates, states, objects, etc. in addition, working with ReactJS and Tailwind was helpful in the project because these are very important tools that are I needed to build a calendar for the project. These tools helped me to create a user-friendly interface quickly and efficiently
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Continued development
 
-### Deployment
+I found working with dates has different challenges, that's why I found really useful the MomentJS library. It's a great help to manage and manipulate dates and times. It's very easy to use and makes the process of managing dates much simpler. It also provides useful methods to format dates and validate them. It's something I want to keep working on in the future.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+
+## Author
+
+
+- Frontend Mentor - [@Abraham0216](https://www.frontendmentor.io/profile/Abraham0216)
+
+
+
+
