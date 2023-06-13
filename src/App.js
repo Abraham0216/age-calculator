@@ -37,12 +37,6 @@ function App() {
 const calculateAge = () => {
   const { days, months, years } = birthDate;
 
-  
-
-  const birthDateString = moment({ day: days, month: months - 1, year: years }).format('DD-MM-YYYY');
-  console.log(birthDateString);
-
-  
   // Cálculo de la fecha de nacimiento y la fecha actual
 
   
@@ -92,26 +86,26 @@ const calculateAge = () => {
 
   if ( years && months && days) {
 
-    if (birthDate.days > 31) {
+    if (days > 31) {
       console.log('El día no es válido');
       errors.days = 'Must be a valid day';
       isValid = false
       
     }
     
-    if (birthDate.months > 12) {
+    if (months > 12) {
       console.log('El mes no es válido');
       errors.months = 'Must be a valid month';
       isValid = false
       
     }
 
-    if (birthDate.years < 1000) {
+    if (years < 1000) {
       console.log('El año no es válido');
       errors.years = 'Must be a valid year';
       isValid = false
       
-    } else if(birthDate.years > new Date().getFullYear()) {
+    } else if(years > new Date().getFullYear()) {
       console.log('El año no es válido');
       errors.years = 'Must be past';
       isValid = false
@@ -119,18 +113,7 @@ const calculateAge = () => {
     }
 
     
-    if (!moment(birthDateString, 'DD-MM-YYYY', true).isValid()) {
-
-      
-      
-      /* if (!birthDateString.year()) {
-        console.log('El año no es válido');
-      } */
-
-
-      /* console.log('Fecha de nacimiento inválida');
-      errors.dateDays = 'Must be a valid';
-      errors.dateMonths = 'Must be a valid'; */
+    if (!moment(birthDateMoment, 'DD-MM-YYYY', true).isValid()) {
       isValid = false
     } else {
       errors.date = ""
@@ -138,20 +121,8 @@ const calculateAge = () => {
   }
   
 
-  // Validación de fecha de nacimiento antes de la fecha actual
-  if (currentDate.isBefore(birthDateString)) {
-    console.log('Fecha de nacimiento debe ser anterior a la fecha actual');
-    errors.date = 'Must be in the past';
-    isValid = false
-  } else {
-    errors.date = ""
-  }
 
   
-
-  // Validación de fecha de nacimiento
-  
-
 
   if (isValid) {
 
@@ -162,12 +133,7 @@ const calculateAge = () => {
     setAge({ days: null, months: null, years: null })
   }
 
-  /* if (Object.keys(errors).length > 0) {
-    
-    
-  } else {
-    setErrors({days: "", months: "", years: ""})
-  } */
+  
   
 };
   
