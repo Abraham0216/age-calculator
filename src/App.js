@@ -1,6 +1,7 @@
 import React, { createContext, useState } from 'react';
 import Calculator from './components/calculator';
 import moment from 'moment';
+import Attribution from './components/attribution';
 
 export const appContext = createContext(null)
 
@@ -22,7 +23,7 @@ function App() {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     
-  
+    
     setBirthDate((prevState) => ({
       ...prevState,
       [name]: parseInt(value, 10)
@@ -144,6 +145,7 @@ const calculateAge = () => {
     <div className="App bg-gray-100 min-h-screen  flex flex-col">
 
       <Calculator/>
+      <Attribution/>
       
     </div>
     </appContext.Provider>

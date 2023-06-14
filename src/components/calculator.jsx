@@ -10,6 +10,7 @@ const Calculator = () => {
             <Form/>
             <Btn/>
             <Time/>
+            
         </div>
     );
 }
